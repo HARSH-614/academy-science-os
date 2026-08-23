@@ -1,0 +1,32 @@
+/* 
+  S.BARUAH SCIENCE ACADEMY 2.0
+  CORE CSS ARCHITECTURE 
+*/
+
+/* Foundation Imports - To be implemented in Step 02 */
+@import url('./design-system.css');
+@import url('./typography.css');
+
+/* Base Reset Foundation */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* App Root Minimum Structure */
+#app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1; /* Above dynamic background */
+}
