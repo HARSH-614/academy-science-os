@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Theme Tokens */
+    --background: #f8fafc;
+    --surface: #ffffff;
+    --surface-glass: rgba(255, 255, 255, 0.7);
+    --surface-elevated: #ffffff;
+    
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    
+    --accent-primary: #2563eb;
+    --accent-secondary: #7c3aed;
+    --accent-science: #0ea5e9;
+    --accent-success: #10b981;
+    --accent-warning: #f59e0b;
+    --accent-danger: #ef4444;
+    
+    --border: #e2e8f0;
+  }
+
+  .dark {
+    /* Dark Science Theme Tokens (Default) */
+    --background: #020617;
+    --surface: #0f172a;
+    --surface-glass: rgba(15, 23, 42, 0.7);
+    --surface-elevated: #1e293b;
+    
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #475569;
+    
+    --accent-primary: #3b82f6;
+    --accent-secondary: #8b5cf6;
+    --accent-science: #38bdf8;
+    --accent-success: #34d399;
+    --accent-warning: #fbbf24;
+    --accent-danger: #f87171;
+    
+    --border: #1e293b;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-surface-glass backdrop-blur-md border border-border/50 shadow-glass;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+  }
+}
+
+/* Prevent pull-to-refresh on mobile apps */
+html, body {
+  overscroll-behavior-y: none;
+}
