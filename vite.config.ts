@@ -3,12 +3,13 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   
-  // CRITICAL for GitHub Pages: Use environment variable or default to placeholder
-  // Change '/REPOSITORY-NAME/' to your actual repo name in .env or hardcode here if needed
-  const base = env.VITE_BASE_PATH || '/REPOSITORY-NAME/';
+  // FIX: Automatically use '/' for local development (npm run dev)
+  // Only use the repository name for the production build (npm run build)
+  const isDev = command === 'serve';
+  const base = isDev ? '/' : (env.VITE_BASE_PATH || '/REPOSITORY-NAME/');
 
   return {
     base: base,
@@ -16,7 +17,8 @@ export default defineConfig(({ mode }) => {
       react(),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
+        // FIX: Temporarily removed strict asset inclusion requirements
+        // until we generate actual icons for the PWA in a later command
         manifest: {
           name: 'S.Baruah Science Academy',
           short_name: 'Science Academy',
@@ -25,19 +27,7 @@ export default defineConfig(({ mode }) => {
           background_color: '#0f172a',
           display: 'standalone',
           orientation: 'portrait',
-          icons: [
-            {
-              src: 'pwa-192x192.png',
-              sizes: '192x192',
-              type: 'image/png'
-            },
-            {
-              src: 'pwa-512x512.png',
-              sizes: '512x512',
-              type: 'image/png',
-              purpose: 'any maskable'
-            }
-          ]
+          icons: [] // Leave empty until we create real icons
         }
       })
     ],
