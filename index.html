@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SCIENCE NEXUS OS</title>
+    <!-- CSS Architecture -->
+    <link rel="stylesheet" href="assets/css/core/reset.css">
+    <link rel="stylesheet" href="assets/css/core/tokens.css">
+    <link rel="stylesheet" href="assets/css/layout/grid.css">
+    <link rel="stylesheet" href="assets/css/layout/shell.css">
+    <link rel="stylesheet" href="assets/css/components/ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-theme="nexus-dark">
+
+    <!-- Diagnostic Boot Sequence -->
+    <div id="boot-sequence">
+        <div class="boot-container">
+            <i class="fas fa-atom" id="boot-icon" style="font-size: 3rem; color: var(--domain-physics); margin-bottom: var(--space-md);"></i>
+            <h1 class="text-display" style="font-size: 1.5rem; letter-spacing: 4px;">NEXUS OS</h1>
+            <div class="boot-progress-track">
+                <div class="boot-progress-fill" id="boot-loader"></div>
+            </div>
+            <div id="boot-status" class="text-data text-muted">INITIALIZING KINEMATICS...</div>
+        </div>
+    </div>
+
+    <!-- Main Application Shell -->
+    <main id="app-shell" class="app-layout" style="opacity: 0; pointer-events: none;">
+        
+        <!-- Mobile/Tablet Top Header -->
+        <header id="top-bar">
+            <div class="brand">
+                <i class="fas fa-microscope text-domain-bio"></i>
+                <span class="text-display" style="font-size: 1.2rem;">SCI-NEXUS</span>
+            </div>
+            <div class="top-controls">
+                <button class="sci-btn" id="cmd-palette-trigger"><i class="fas fa-search"></i> <span class="hide-mobile text-data">CMD+K</span></button>
+            </div>
+        </header>
+
+        <div class="workspace-grid">
+            
+            <!-- Left Navigation Sidebar -->
+            <nav class="sidebar-left scroll-panel" id="global-nav">
+                <div class="nav-group">
+                    <div class="nav-label text-data">CORE SYSTEMS</div>
+                    <a href="#dashboard" class="nav-link active"><i class="fas fa-th-large"></i> Command Center</a>
+                    <a href="#explorer" class="nav-link"><i class="fas fa-compass"></i> Subject Explorer</a>
+                    <a href="#practice" class="nav-link"><i class="fas fa-dumbbell"></i> Practice Arena</a>
+                    <a href="#simulate" class="nav-link"><i class="fas fa-flask"></i> Simulation Lab</a>
+                    <a href="#revise" class="nav-link"><i class="fas fa-book-open"></i> Revision Center</a>
+                </div>
+                
+                <div class="nav-group" style="margin-top: var(--space-xl);">
+                    <div class="nav-label text-data">INTELLIGENCE</div>
+                    <a href="#track" class="nav-link"><i class="fas fa-chart-line"></i> Scholar Analytics</a>
+                    <a href="#bookmarks" class="nav-link"><i class="fas fa-bookmark"></i> Saved Data</a>
+                </div>
+            </nav>
+
+            <!-- Center Workspace (Router Target) -->
+            <section id="workspace" class="scroll-panel">
+                <!-- Javascript router.js injects views here -->
+            </section>
+
+            <!-- Right Telemetry Sidebar -->
+            <aside class="sidebar-right scroll-panel" id="telemetry-panel">
+                <h3 class="text-data text-muted" style="margin-bottom: var(--space-md);">LIVE TELEMETRY</h3>
+                
+                <!-- Scholar Rank Card -->
+                <div class="sci-card" style="margin-bottom: var(--space-md);">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                        <span class="text-data">RANK <span id="tel-level" class="text-domain-phy">01</span></span>
+                        <span class="text-data text-muted"><span id="tel-xp">0</span> XP</span>
+                    </div>
+                    <div class="sci-progress-track">
+                        <div class="sci-progress-fill" style="width: 5%;"></div>
+                    </div>
+                </div>
+
+                <!-- Active Streak Card -->
+                <div class="sci-card" style="margin-bottom: var(--space-md);">
+                    <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                        <i class="fas fa-fire" style="color: var(--domain-chemistry);"></i>
+                        <span class="text-data">DATA STREAK: <span class="text-display" style="font-size: 1rem;">0 DAYS</span></span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        
+        <!-- Mobile Bottom Navigation -->
+        <nav id="mobile-nav">
+            <a href="#dashboard" class="mobile-nav-link active"><i class="fas fa-home"></i></a>
+            <a href="#explorer" class="mobile-nav-link"><i class="fas fa-compass"></i></a>
+            <a href="#simulate" class="mobile-nav-link"><i class="fas fa-flask"></i></a>
+            <a href="#track" class="mobile-nav-link"><i class="fas fa-user"></i></a>
+        </nav>
+    </main>
+
+    <!-- Scripts -->
+    <script src="assets/js/core/state.js"></script>
+    <script src="assets/js/core/router.js"></script>
+    <script src="assets/js/components/navigation.js"></script>
+    <script src="assets/js/views/dashboard.js"></script>
+    <script src="assets/js/core/boot.js"></script>
+</body>
+</html>
