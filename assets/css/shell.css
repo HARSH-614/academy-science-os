@@ -1,0 +1,197 @@
+/**
+ * SCIENCE NEXUS 2.0 - APPLICATION SHELL
+ * Defines the master grid layout, headers, sidebars, and bottom navigation.
+ */
+
+/* Master Shell Layout */
+#nexus-app-shell {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg-base);
+}
+
+/* Mobile Top Header */
+.nexus-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--bg-surface-elevated);
+    border-bottom: 1px solid var(--border-subtle);
+    height: 60px;
+    flex-shrink: 0;
+    z-index: var(--z-header);
+}
+
+.nexus-header .brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* Main Content Workspace */
+.nexus-workspace-wrapper {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.nexus-workspace {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-md);
+    padding-bottom: calc(60px + var(--space-md)); /* Padding for mobile bottom nav */
+}
+
+/* Sidebars (Hidden on Mobile) */
+.nexus-sidebar {
+    display: none;
+    width: 260px;
+    background-color: var(--bg-surface);
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.nexus-sidebar-left {
+    border-right: 1px solid var(--border-subtle);
+    padding: var(--space-md) 0;
+}
+
+.nexus-sidebar-right {
+    border-left: 1px solid var(--border-subtle);
+    padding: var(--space-md);
+    width: 280px;
+}
+
+/* Navigation Links */
+.nav-group {
+    margin-bottom: var(--space-lg);
+}
+
+.nav-label {
+    padding: 0 var(--space-lg);
+    margin-bottom: var(--space-sm);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-lg);
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all var(--trans-fast);
+    border-left: 3px solid transparent;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+}
+
+.nav-link.active {
+    background-color: rgba(0, 243, 255, 0.08);
+    color: var(--color-physics);
+    border-left-color: var(--color-physics);
+}
+
+.nav-link i {
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Mobile Bottom Navigation */
+.nexus-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: var(--bg-surface-elevated);
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: var(--z-header);
+    padding-bottom: env(safe-area-inset-bottom); /* iOS support */
+}
+
+.bottom-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: var(--text-muted);
+    padding: var(--space-sm);
+    transition: color var(--trans-fast);
+    flex: 1;
+}
+
+.bottom-nav-link i {
+    font-size: 1.2rem;
+}
+
+.bottom-nav-link span {
+    font-size: 0.65rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+.bottom-nav-link.active {
+    color: var(--color-physics);
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Tablet and Desktop */
+@media (min-width: 768px) {
+    .nexus-header {
+        display: none; /* Replace with sidebar header */
+    }
+    
+    .nexus-bottom-nav {
+        display: none; /* Hide bottom nav on larger screens */
+    }
+
+    .nexus-sidebar-left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nexus-workspace {
+        padding: var(--space-xl);
+        padding-bottom: var(--space-xl); /* Reset bottom padding */
+    }
+
+    .sidebar-brand {
+        padding: 0 var(--space-lg);
+        margin-bottom: var(--space-xl);
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1024px) {
+    .nexus-sidebar-right {
+        display: block;
+    }
+}
