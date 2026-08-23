@@ -1,0 +1,107 @@
+/**
+ * SCIENCE NEXUS 2.0 - REUSABLE COMPONENTS
+ * Foundational UI blocks. Agnostic to specific pages.
+ */
+
+/* TYPOGRAPHY COMPONENTS */
+.heading-display {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.text-mono {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    letter-spacing: 0.02em;
+}
+
+/* SCI-CARD: The primary content container */
+.sci-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    transition: transform var(--trans-fast), border-color var(--trans-fast), box-shadow var(--trans-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.sci-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+/* Elevated variant for modals/overlays */
+.sci-card-elevated {
+    background: var(--bg-surface-elevated);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+}
+
+/* SCI-BUTTON: Interactive actions */
+.sci-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-lg);
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--trans-fast);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.sci-btn:hover {
+    background: var(--border-subtle);
+    border-color: var(--text-muted);
+}
+
+.sci-btn:active {
+    transform: scale(0.98);
+}
+
+/* Primary Button Variants based on Domain */
+.sci-btn.primary-physics { background: rgba(0, 243, 255, 0.1); color: var(--color-physics); border-color: var(--color-physics); }
+.sci-btn.primary-physics:hover { background: var(--color-physics); color: var(--bg-base); box-shadow: 0 0 15px rgba(0, 243, 255, 0.3); }
+
+.sci-btn.primary-chemistry { background: rgba(255, 176, 0, 0.1); color: var(--color-chemistry); border-color: var(--color-chemistry); }
+.sci-btn.primary-chemistry:hover { background: var(--color-chemistry); color: var(--bg-base); box-shadow: 0 0 15px rgba(255, 176, 0, 0.3); }
+
+.sci-btn.primary-biology { background: rgba(0, 255, 136, 0.1); color: var(--color-biology); border-color: var(--color-biology); }
+.sci-btn.primary-biology:hover { background: var(--color-biology); color: var(--bg-base); box-shadow: 0 0 15px rgba(0, 255, 136, 0.3); }
+
+/* SCI-BADGE: Metadata and tags */
+.sci-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    background: var(--border-subtle);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-pill);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.sci-badge.success { background: rgba(16, 185, 129, 0.1); color: var(--color-success); border-color: var(--color-success); }
+.sci-badge.warning { background: rgba(245, 158, 11, 0.1); color: var(--color-warning); border-color: var(--color-warning); }
+
+/* GRADIENT TEXT UTILITIES */
+.text-gradient-physics {
+    background: linear-gradient(135deg, #fff 0%, var(--color-physics) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
