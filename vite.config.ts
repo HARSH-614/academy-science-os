@@ -4,15 +4,12 @@ import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 
 export default defineConfig({
-  // THE FIX: Using './' makes all asset links relative.
-  // It will now automatically work on GitHub Pages regardless of your repository name.
-  base: './', 
+  // MOBILE UPLOAD FIX: Using './' guarantees GitHub Pages finds assets regardless of repo name
+  base: './',
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      // We temporarily leave icons empty so the build doesn't fail
-      // while we wait to generate real ones in a future command.
       manifest: {
         name: 'S.Baruah Science Academy',
         short_name: 'Science Academy',
@@ -21,7 +18,7 @@ export default defineConfig({
         background_color: '#0f172a',
         display: 'standalone',
         orientation: 'portrait',
-        icons: [] 
+        icons: [] // Kept empty to prevent build crashes until we generate icons
       }
     })
   ],
