@@ -2,43 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <!-- Dynamic Title populated by JS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>S.Baruah Science Academy</title>
     
-    <!-- Base CSS Architecture -->
-    <link rel="stylesheet" href="assets/css/tokens.css">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/layout.css">
-    <link rel="stylesheet" href="assets/css/components.css">
+    <!-- Core CSS Architecture -->
+    <link rel="stylesheet" href="./css/core.css">
     
-    <!-- Temporary Style for Boot Wrapper - to be replaced by actual Layout module -->
-    <style>
-        #nexus-app-root {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-    </style>
+    <!-- Preconnect & Meta (SEO Mode Ready) -->
+    <meta name="description" content="S.Baruah Science Academy - Comprehensive Science Notes and interactive learning for Class 8 and Class 9.">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-
-    <!-- Main Application Entry Point -->
-    <div id="nexus-app-root">
-        <!-- Future Shell/Navigation injection -->
-    </div>
-
-    <!-- Configuration & State Management -->
-    <script src="config/site-config.js"></script>
-    <script src="assets/js/core/state.js"></script>
+    <!-- Global Layout Mount Points -->
+    <div id="background-mount"></div>
+    <header id="header-mount"></header>
     
-    <!-- Initialize App Metadata -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.title = window.SiteConfig.app.name;
-            console.log(`[SYSTEM] Booting ${window.SiteConfig.app.name} v${window.SiteConfig.app.version}`);
-        });
-    </script>
+    <!-- Main Application Router View -->
+    <main id="app-root">
+        <!-- Content will be injected here by the router -->
+    </main>
+    
+    <footer id="footer-mount"></footer>
+
+    <!-- Global Loading System Mount -->
+    <div id="loader-mount"></div>
+
+    <!-- Core Application Logic -->
+    <script type="module" src="./js/router.js"></script>
 </body>
 </html>
