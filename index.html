@@ -1,33 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- Mobile First Viewport & Safe Area -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="description" content="S.Baruah Science Academy - Premium Interactive Learning" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
     <title>S.Baruah Science Academy</title>
-    
-    <!-- Core CSS Architecture -->
-    <link rel="stylesheet" href="./css/core.css">
-    
-    <!-- Preconnect & Meta (SEO Mode Ready) -->
-    <meta name="description" content="S.Baruah Science Academy - Comprehensive Science Notes and interactive learning for Class 8 and Class 9.">
-    <meta name="theme-color" content="#ffffff">
-</head>
-<body>
-    <!-- Global Layout Mount Points -->
-    <div id="background-mount"></div>
-    <header id="header-mount"></header>
-    
-    <!-- Main Application Router View -->
-    <main id="app-root">
-        <!-- Content will be injected here by the router -->
-    </main>
-    
-    <footer id="footer-mount"></footer>
-
-    <!-- Global Loading System Mount -->
-    <div id="loader-mount"></div>
-
-    <!-- Core Application Logic -->
-    <script type="module" src="./js/router.js"></script>
-</body>
+    <!-- Preload fonts if added later -->
+  </head>
+  <body class="bg-background text-text-primary antialiased selection:bg-primary selection:text-white overscroll-none">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
