@@ -1,0 +1,52 @@
+{
+    "metadata": {
+        "class": 9,
+        "subject": "physics",
+        "domainColor": "var(--domain-physics)",
+        "icon": "fa-atom",
+        "version": "1.0.0"
+    },
+    "chapters": [
+        {
+            "id": "c9.phy.motion",
+            "number": 8,
+            "title": "Motion",
+            "description": "Fundamental concepts of distance, displacement, velocity, and uniform acceleration.",
+            "metrics": { "topics": 5, "simulations": 2, "numericals": 8 },
+            "topics": [
+                {
+                    "id": "c9.phy.motion.intro",
+                    "title": "Describing Motion & Reference Points",
+                    "type": "theory",
+                    "status": "available"
+                },
+                {
+                    "id": "c9.phy.motion.velocity",
+                    "title": "Speed, Velocity, and Acceleration",
+                    "type": "theory",
+                    "status": "available"
+                },
+                {
+                    "id": "c9.phy.motion.graphs",
+                    "title": "Graphical Representation of Motion",
+                    "type": "simulation",
+                    "status": "available"
+                },
+                {
+                    "id": "c9.phy.motion.equations",
+                    "title": "Equations of Kinematics",
+                    "type": "numerical",
+                    "status": "available"
+                }
+            ]
+        },
+        {
+            "id": "c9.phy.force",
+            "number": 9,
+            "title": "Force and Laws of Motion",
+            "description": "Newton's laws, inertia, momentum, and conservation of momentum.",
+            "metrics": { "topics": 4, "simulations": 1, "numericals": 10 },
+            "topics": []
+        }
+    ]
+}
